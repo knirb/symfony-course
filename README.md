@@ -8,7 +8,6 @@ To start a new symfony project, install symfony and use
 
 ```
 symfony new <name>
-
 ```
 
 ### Dev server
@@ -17,7 +16,6 @@ Symfony has a built in dev server. It can be started using
 
 ```
 symfony server:start
-
 ```
 
 standard port is 8000 so take look at [localhost:8000](localhost:8000) to see if it's working.
@@ -287,7 +285,7 @@ An extension to what we already know about routes is that we can add dynamic rou
 
 We can also limit methods for a route using the methods option, and give it a name that can be used for redirect
 
-```
+```php
 @Route("/posts/{slug}", methods={"GET", "PUT"}, name="some_name")
 ```
 
@@ -328,14 +326,17 @@ Symfony has built in session handling and its configuration can be found in conf
 
 ```php
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 ...
+
 public function details(..., SessionInterface $session)
 {
     ...
+
     $cart = $session->get("cart", []); //gets cart or empty array
+
     ...
 }
-
 ```
 
 To add items to the cart we can add a button in the template that makes a post request and handle it in our details function
