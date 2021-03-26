@@ -93,7 +93,7 @@ templates are define with syntax as in the above example and could range from so
 
 To send data to your templates you need to choose the template in a controller, but rather than loading in the twig library and rendering ourselves we can use Symfonys AbstractController class to make it easier.
 
-```
+```php
 <?php
 
 namespace App\Controller;
@@ -189,7 +189,7 @@ Enter this information in the .env file in the root of the project (there are co
 
 Doctrine will generate Entity PHP-files that will look something like this:
 
-```
+```php
 <?php
 
 namespace App\Entity;
@@ -280,7 +280,7 @@ And in our templates we can do something as follows:
 
 An extension to what we already know about routes is that we can add dynamic routing with slugs or ids e.g.
 
-```
+```php
 @Route("/posts/{slug}")
 @Route("/posts/{id}", requirements={"id"="\d+"}) //Requires id to be a number
 ```
